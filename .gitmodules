@@ -1,0 +1,3 @@
+[submodule "lib/ESP8266WebServer"]
+	path = lib/ESP8266WebServer
+	url = ../iart-forked-esp8266webserver

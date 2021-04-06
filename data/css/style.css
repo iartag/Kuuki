@@ -1,0 +1,343 @@
+:root {
+	--red: #F03E3E;
+	--orange: #FFDD00;
+	--green: #30B32D;
+	--accentHue: 207;
+	--fontColor: #EEE;
+}
+
+* {
+	font-family: sans-serif;
+	color:var(--fontColor);
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	line-height: 130%;
+}
+
+*:focus {
+	outline: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: hsla(var(--accentHue), 100%, 15%, 1);
+	display: grid;
+	grid-template-rows: 5em minmax(0, 1fr);
+	height: 100vh;
+	overflow: hidden;
+}
+
+#infos {
+	height: fit-content;
+	overflow-y: auto;
+}
+
+header {
+	display: grid;
+	grid-template-columns: auto 3.5em;
+	grid-template-rows: minmax(0, 1fr);
+	padding: 0em 1.5em;
+}
+
+#infos header {
+	grid-template-columns: 3.5em auto;
+}
+
+header nav {
+	align-self: stretch;
+	padding: 0.8em 0em;
+	display: flex;
+	justify-content: flex-start;
+}
+
+header nav ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	width: 100%;
+}
+
+h1#pageTitle {
+	align-self: center;
+}
+
+#infos h2 {
+	margin: 1em 0 0.5em;
+}
+
+h2#ranges {
+	margin-top: 0;
+}
+
+h3, h4 {
+	margin-bottom: 0.5em;
+}
+
+p {
+	margin-bottom: 0.7em;
+}
+
+#content {
+	display: grid;
+	grid-template-rows: auto;
+	align-items: stretch;
+	padding: 1.5em;
+	gap: 1.5em 1.5em;
+}
+
+#infos #content {
+	align-content: flex-start;
+} 
+
+#dashboard #content {
+	grid-template-columns: minmax(22em, 1fr) minmax(0, 4fr);
+}
+
+#infos #rangeValues {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 1.5em;
+	gap: 1.5em 1.5em;
+}
+
+#statusInformations,
+#sensorData,
+#rangeValues > div {
+	padding: 1.5em;
+	background-color: hsla(0,0%, 100%, 0.08);
+	border-radius: 0.6em;
+	overflow-y: auto;
+}
+
+#sensorData {
+	display: grid;
+	grid-template-columns: minmax(18em, 1fr) minmax(0, 3.5fr);
+	grid-auto-rows: minmax(19em, 30em);
+	grid-auto-flow: row;
+	column-gap: 1.5em;
+	row-gap: 1.5em;
+	justify-items: stretch;
+	align-items: stretch;
+	max-height: 100%;
+}
+
+.currentContainer > * {
+	align-self: center;
+	justify-self: center;
+}
+
+.currentContainer {
+	display: grid;
+	grid-template-rows: 1fr 1fr 2fr;
+	justify-content: stretch;
+	align-content: stretch;
+	padding-bottom: 1em;
+}
+
+.lineChartContainer {
+	padding: 1em 0;
+}
+
+.gaugeTextField {
+	font-size: 250%;
+	font-weight: 200;
+	margin: 0;
+}
+
+
+#statusInformations ul {
+	padding: 0;
+	margin: 1.5em 0em;
+}
+
+#statusInformations ul li {
+	margin: 0.2em 0em;
+	line-height: 1.35;
+	list-style-type: none;
+}
+
+#ssid,
+#ip {
+	font-weight: 200;
+	font-size: 2rem;
+	font-size: max(2rem, 1.9vw);
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#connectionIndicator {
+	display: inline-block;
+	margin: 0em;
+	margin-right: 0.5em;
+	width: 0.8em;
+	height: 0.8em;
+	background-color: var(--orange);
+	border-radius: 50%;
+}
+
+#connectionIndicator.success {
+	background-color: var(--green);
+}
+
+#connectionIndicator.error {
+	background-color: var(--red);
+}
+
+form[name=networkConfig] div {
+	display: inline-grid;
+	grid-template-columns: minmax(0, 1fr) 3em;
+	grid-template-rows: 3em;
+	column-gap: 0.5em;
+}
+
+form[name=networkConfig] div#connectCheckbox {
+	grid-template-columns: 1.5em minmax(0, 1fr);
+	grid-template-rows: 2em;
+	align-items: center;
+}
+
+input[type=checkbox] {
+	width: 1em;
+	height: 1em;
+}
+
+svg {
+	height: 100%;
+	fill: var(--fontColor);
+}
+
+.icons {
+    background-color: transparent;
+    border: none;
+    padding: 0.5em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.icons:hover {
+	cursor: pointer;
+}
+
+.icons:hover > svg.rotate,
+.icons:focus > svg.rotate {
+	transform: rotate(180deg);
+	transition: transform 0.5s ease-in-out;
+}
+
+.icons:active > svg {
+	fill:hsla(var(--accentHue), 100%, 15%, 1);
+}
+
+form {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	transform-origin: top;
+}
+
+form > * {
+	margin: 0.5em 0;
+}
+
+form > label {
+	margin: 0.7em 0em 0em 0em;
+}
+
+form.retracted,
+.hidden {
+	display: none;
+}
+
+input,
+#configNetwork,
+#configSensor {
+	background-color: rgba(255,255,255,0.2);
+	border: none;
+	border-bottom: solid 0.1em var(--fontColor);
+	padding: 0.5em;
+	display: table;
+	font-size: 125%;
+}
+
+input[type="submit"],
+#configSensor,
+#configNetwork {
+	border: solid 0.1em var(--fontColor);
+	border-radius: 0.6em;
+	text-align: center;
+	width: 100%;
+	margin: 0.75em 0;
+}
+
+input:hover,
+input:focus,
+#configNetwork:hover,
+#configNetwork:focus,
+#configNetwork.active,
+#configSensor:hover,
+#configSensor:focus,
+#configSensor.active {
+	background-color: rgba(0,0,0,.3);
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+	#sensorData {
+		grid-template-columns: minmax(0, 1fr);
+		grid-auto-rows: minmax(17em, 21em);
+	}
+
+	.currentContainer {
+		padding-bottom: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		overflow-y: auto;
+		grid-template-rows: 5em auto;
+	}
+
+	#dashboard #content {
+		grid-template-columns: 1fr;
+	}
+
+	#infos #rangeValues {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#dashboard #content,
+	#infos #content {
+		padding: 4%;
+	}
+
+	#sensorData,
+	#statusInformations {
+		padding: 4%;
+	}
+
+	#infos #rangeValues,
+	#infos header {
+		padding: 0;	
+	}
+
+}
+
+*::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 0.6em;
+	background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgba(255,255,255, 0.2);
+}

@@ -1,0 +1,20 @@
+{
+	"networkSettings" : {
+		"connectingTimeout": 10,
+		"maxConnectionAttempts": 3,
+		"savedNetworks": [
+			{
+				"ssid": "",
+				"password": ""
+			},
+			{
+				"ssid": "",
+				"password": ""
+			},
+			{
+				"ssid": "",
+				"password": ""
+			}
+		]
+	}
+}

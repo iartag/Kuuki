@@ -1,0 +1,49 @@
+{
+	"sensorName": "Kuuki",
+	"properties": ["index", "co2", "temperature", "humidity"],
+	"sensor": {
+		"readInterval": 10,
+		"correction": {
+			"altitude": 800,
+			"pressure": 900,
+			"temperature": 3
+		}
+	},
+	"virusIndexSettings": {
+		"index": {
+			"gaugeMin": 1,
+			"gaugeMax": 10,
+			"good": 3,
+			"ok": 7
+		},
+		"co2": {
+			"gaugeMin": 0,
+			"gaugeMax": 4000,
+			"good": 800,
+			"ok": 2000
+		},
+		"temperature": {
+			"gaugeMin": 10,
+			"gaugeMax": 30,
+			"badBelow": 15,
+			"goodBelow": 19,
+			"goodAbove": 24,
+			"okAbove": 27,
+			"badAbove": 30 
+		},
+		"humidity": {
+			"gaugeMin": 0,
+			"gaugeMax": 100,
+			"badBelow": 30,
+			"goodBelow": 40,
+			"goodAbove": 60,
+			"okAbove": 70,
+			"badAbove": 80
+		}
+	},
+	"softAccessPointSettings" : {
+		"ssid": "Kuuki_WLAN",
+		"password": "Kuuki_WLAN",
+		"ip": "192.168.1.1"
+	}
+}

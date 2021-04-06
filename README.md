@@ -1,0 +1,33 @@
+# Virus Index Sensor
+In this Repository all components necessary for a room climate indicator are collected.
+With the sensor module Sensorion SCD30 the air quality is measured.
+The sensor is connected to a Witty Cloud Board equiped with the ESP8266 micro controller,
+which provides a web interface to controll the air quality sensor and manage the network connection of the system.
+
+## Requirements
+To rebuild this sensor you need the following components:
+### Basic Hardware
+* Grove - CO2 & Temperature & Humidity Sensor for Arduino (Sensirion SCD30)
+* Witty Cloud ESP8266 Smart WiFi Modul
+
+### Development Environment
+If you just want to download, flash and use the sensor with our latest firmware you'll find the neccessary files and instructions in the [build folder](/build).
+
+If you like to make some changes to the software you need to compile the code before flashing to the Witty Board. Therefor we used:
+* PlatformIO IDE for Visual Studio Code
+
+This project was build on Windows 10
+Rebuild was (not yet) tested on Windows and Ubuntu.
+Make sure you have Visual Studio Code and the Extension PlatformIO IDE sucessfully installed. 
+
+### Case
+* ?? 
+* Micro USB for Power
+* potentially USB Power Adapter
+
+### Skills
+* Soldering
+
+<!-- ## Installation
+Clone this repo to your computer:
+``` git clone -->
