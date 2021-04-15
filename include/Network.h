@@ -133,21 +133,24 @@ void Network::scanNetwork() {
     [this] (int n) {
       if(n >= 0) {
         Serial.print(String(n) + " network(s) found:\n");
-        String dataJSON = "[ ";
+        webServer.setContentLength(CONTENT_LENGTH_UNKNOWN);
+        webServer.send(200, "application/octet-stream", "");
+        webServer.sendContent("[ ");
+        
         for (int i = 0; i < n; i++) {
-          dataJSON += "{ ";
-          dataJSON += "\"ssid\": \"" + String(WiFi.SSID(i)) + "\", ";
-          dataJSON += "\"channel\": " + String(WiFi.channel(i)) + ", ";
-          dataJSON += "\"rssi\": " + String(WiFi.RSSI(i)) + ", ";
-          dataJSON += "\"hidden\": " + String(WiFi.isHidden(i)) + ", ";
-          dataJSON += "\"encryptionType\": " + String(WiFi.encryptionType(i)) + " ";
-          dataJSON += "}";
-          if(i != n-1) { dataJSON += ", "; }
+          webServer.sendContent("{ ");
+          webServer.sendContent("\"ssid\": \"" + String(WiFi.SSID(i)) + "\", ");
+          webServer.sendContent("\"channel\": " + String(WiFi.channel(i)) + ", ");
+          webServer.sendContent("\"rssi\": " + String(WiFi.RSSI(i)) + ", ");
+          webServer.sendContent("\"hidden\": " + String(WiFi.isHidden(i)) + ", ");
+          webServer.sendContent("\"encryptionType\": " + String(WiFi.encryptionType(i)) + " ");
+          webServer.sendContent("}");
+          if(i != n-1) { webServer.sendContent(", "); }
 
           Serial.println(WiFi.SSID(i));
         }
-        dataJSON += " ]";
-        webServer.send(200, "application/json", dataJSON);
+        webServer.sendContent(" ]");
+        webServer.sendContent("",0);
       }
       webServerPaused = false;
     }

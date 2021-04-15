@@ -254,11 +254,7 @@ async function changeNetwork(fields) {
 };
 
 async function detectNetwork() {
-        return fetch(tempURL + '/detectNetwork', {
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
+        return fetch(tempURL + '/detectNetwork', {})
 };
 
 async function configNetwork() {
