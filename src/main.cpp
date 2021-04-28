@@ -122,7 +122,6 @@ void handleSensorConfigUpdate() {
 
     writeJSON("config", "/config.json");
     printFile("/config.json");
-    printFile("/network.json");
 
     network.getWebServer().send(200, "application/json", "{\"status\": \"ok\"}");
 }
