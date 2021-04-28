@@ -16,15 +16,15 @@ To rebuild this sensor you need the following components:
 If you just want to download, flash and use the sensor with our latest firmware you'll find the neccessary files and instructions in the [build folder](/build).
 
 If you like to make some changes to the software you need to compile the code before flashing to the Witty Board. Therefor we used:
-* PlatformIO IDE for Visual Studio Code
+* [PlatformIO IDE](https://platformio.org/install/ide?install=vscode) for Visual Studio Code
 
 This project was build on Windows 10.
 Rebuild was tested on Windows.
 Make sure you have Visual Studio Code and the Extension PlatformIO IDE sucessfully installed. 
 
 ### Case
-* self-printed or bought barebone 
-* optional bear case
+* self-printed or [bought barebone](https://kuuki.ch) 
+* [optional bear case](https://kuuki.ch)
 * Micro USB for Power
 * potentially USB Power Adapter
 
