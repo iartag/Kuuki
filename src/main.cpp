@@ -53,12 +53,12 @@ void handleDataReadOut() {
     float humidity = airSensor.getHumidity();
     unsigned short index = getVirusIndex(co2, temperature, humidity);
 
-    String dataJSON = "{";
-    dataJSON += "\"index\": " + String(index) + ",";
-    dataJSON += "\"co2\": " + String(co2) + ",";
-    dataJSON += "\"temperature\": " + String(temperature) + ",";
-    dataJSON += "\"humidity\": " + String(humidity);
-    dataJSON += "}";
+    String dataJSON = String("{")
+      + "\"index\": " + String(index) + ","
+      + "\"co2\": " + String(co2) + ","
+      + "\"temperature\": " + String(temperature) + ","
+      + "\"humidity\": " + String(humidity)
+      + "}";
 
     network.getWebServer().send(200, "application/json", dataJSON);
 
