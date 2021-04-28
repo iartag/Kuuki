@@ -9,7 +9,7 @@ which provides a web interface to controll the air quality sensor and manage the
 ## Requirements
 To rebuild this sensor you need the following components:
 ### Basic Hardware
-* Grove - CO2 & Temperature & Humidity Sensor for Arduino (Sensirion SCD30)
+* CO2 & Temperature & Humidity Sensor (Sensirion SCD30)
 * Witty Cloud ESP8266 Smart WiFi Modul
 
 ### Development Environment
