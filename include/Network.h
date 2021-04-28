@@ -136,14 +136,14 @@ void Network::scanNetwork() {
         webServer.setContentLength(CONTENT_LENGTH_UNKNOWN);
         webServer.send(200, "application/octet-stream", "");
         webServer.sendContent("[ ");
-        
+
         for (int i = 0; i < n; i++) {
-          webServer.sendContent("{ ");
-          webServer.sendContent("\"ssid\": \"" + String(WiFi.SSID(i)) + "\", ");
-          webServer.sendContent("\"channel\": " + String(WiFi.channel(i)) + ", ");
-          webServer.sendContent("\"rssi\": " + String(WiFi.RSSI(i)) + ", ");
-          webServer.sendContent("\"hidden\": " + String(WiFi.isHidden(i)) + ", ");
-          webServer.sendContent("\"encryptionType\": " + String(WiFi.encryptionType(i)) + " ");
+          webServer.sendContent("{ \
+            \"ssid\": \"" + WiFi.SSID(i) + "\" ");
+          // webServer.sendContent("\"channel\": " + String(WiFi.channel(i)) + ", ");
+          // webServer.sendContent("\"rssi\": " + String(WiFi.RSSI(i)) + ", ");
+          // webServer.sendContent("\"hidden\": " + String(WiFi.isHidden(i)) + ", ");
+          // webServer.sendContent("\"encryptionType\": " + String(WiFi.encryptionType(i)) + " ");
           webServer.sendContent("}");
           if(i != n-1) { webServer.sendContent(", "); }
 
