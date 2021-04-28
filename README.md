@@ -4,7 +4,7 @@ With the sensor module Sensorion SCD30 the air quality is measured.
 The sensor is connected to a Witty Cloud Board equiped with the ESP8266 micro controller,
 which provides a web interface to controll the air quality sensor and manage the network connection of the system.
 
-![Room climate indicator Kuuki](https://kuuki.ch/wp-content/themes/kumoled/img/bg/header.jpg)
+[![Room climate indicator Kuuki](https://kuuki.ch/wp-content/themes/kumoled/img/bg/header.jpg)](https://kuuki.ch)
 
 ## Requirements
 To rebuild this sensor you need the following components:
