@@ -16,12 +16,13 @@ If you just want to download, flash and use the sensor with our latest firmware 
 If you like to make some changes to the software you need to compile the code before flashing to the Witty Board. Therefor we used:
 * PlatformIO IDE for Visual Studio Code
 
-This project was build on Windows 10
-Rebuild was (not yet) tested on Windows and Ubuntu.
+This project was build on Windows 10.
+Rebuild was tested on Windows.
 Make sure you have Visual Studio Code and the Extension PlatformIO IDE sucessfully installed. 
 
 ### Case
-* ?? 
+* self-printed or bought barebone 
+* optional bear case
 * Micro USB for Power
 * potentially USB Power Adapter
 
